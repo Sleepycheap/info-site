@@ -1,10 +1,9 @@
-import {Router} from 'express';
+import express from 'express';
+import { getAuthor } from '../controllers/authorController.js';
+// const router = express.Router();
 
-const authorRouter = Router();
-authorRouter.get('/', (req, res) => res.send('All Authors'));
-authorRouter.get('/:authorId', (req, res) => {
-  const {authorID} = req.params;
-  res.send(`Author ID: ${authorID}`)
-})
+const router = express.Router();
+router.get('/', (req, res) => res.send('All Authors'));
+router.get('/:authorId', getAuthor);
 
-export default Router;
+export default router;

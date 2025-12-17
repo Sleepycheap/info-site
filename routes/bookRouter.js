@@ -1,10 +1,10 @@
-import {Router} from 'express';
+import express from 'express';
 
-const bookRouter = Router();
+const bookRouter = express.Router();
 bookRouter.get('/', (req, res) => res.send('All Books'));
 bookRouter.get('/:bookId', (req, res) => {
   const {bookId} = req.params;
   res.send(`Book ID: ${bookId}`)
 })
 
-export default Router;
+export default bookRouter;
